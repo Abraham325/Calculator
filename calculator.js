@@ -15,7 +15,6 @@ app.get("/bmicalculator", function(req, res){
 
 });
 
-
 app.post("/", function(req, res){
 
     var num1 = Number(req.body.num1);
@@ -25,6 +24,16 @@ app.post("/", function(req, res){
 
     res.send("The result of the calculation is " + result); 
 });  
+
+app.post("/bmicalculator", function(req, res){
+  var weight = parseFloat(req.body.weight);
+  var height = parseFloat(req.body.height);
+
+  var bmi = weight / (height + height);
+
+  res.send("Your BMI is " + bmi);
+
+});
 
 app.listen(4040, function(){
     console.log("server is running on port 4040");
