@@ -10,6 +10,11 @@ app.get("/", function(req, res){
 
 });
 
+app.get("/bmicalculator", function(req, res){
+    res.sendFile(__dirname + "/bmiCalculator.html");
+
+});
+
 
 app.post("/", function(req, res){
 
